@@ -17,7 +17,7 @@ async function initDashboard() {
   }
 
   try {
-    const response = await fetch("https://skillhire-nodejs-1.onrender.com", {
+    const response = await fetch("https://skillhire-nodejs-1.onrender.com/api/auth/profile", {
       headers: {
         Authorization: "Bearer " + token
       }
@@ -54,7 +54,7 @@ async function initDashboard() {
       logoutBtn.addEventListener("click", () => {
         localStorage.clear();
         sessionStorage.clear();
-        window.location.href = "login.html";
+        window.location.href = "index.html";
       });
     }
 
