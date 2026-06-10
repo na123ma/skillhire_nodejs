@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkillHire Registration</title>
+
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Candidate Registration</h2>
+
+        <form id="registerForm">
+            <p id="statusMessage" style="color:#dc2626; font-size:0.95rem; min-height:1.2rem; margin-bottom:0.5rem;"></p>
+
+            <input type="text" id="username" placeholder="Username" required>
+
+            <input type="email" id="email" placeholder="Email" required>
+            <small style="display:block; color:#475569; margin:-0.25rem 0 0.75rem; font-size:0.9rem;">Use a valid email address such as name@domain.com.</small>
+
+            <input type="text" id="rollNo" placeholder="Roll Number" required>
+
+            <input type="text" id="collegeName" placeholder="College Name" required>
+
+            <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+
+            <input type="number" id="passedYear" placeholder="Passed Year" required>
+
+            <input type="text" id="batchNo" placeholder="Batch Number" required>
+
+            <input type="text" id="branch" placeholder="Branch" required>
+
+            <input type="password" id="password" placeholder="Password" required>
+            <small style="display:block; color:#475569; margin:-0.25rem 0 0.75rem; font-size:0.9rem;">Password must be at least 8 characters and include uppercase, lowercase, a number, and a special character.</small>
+
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+        <p>
+            Already Registered?
+            <a href="login.html">Login</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="./js/register.js"></script>
+
+</body>
+</html>
