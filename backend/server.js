@@ -18,7 +18,7 @@ require("./routes/adminRoutes");
 
 const authRoutes = require("./routes/authRoutes");
 const examRoutes = require("./routes/examRoutes");
-app.set("trust proxy", 1);
+
 const app = express();
 
 connectDB().then(() => createAdmin()).catch((error) => {
@@ -33,7 +33,7 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
-
+app.set("trust proxy", 1);
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
