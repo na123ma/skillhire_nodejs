@@ -32,7 +32,7 @@ showStatus("Signing in…", false);
 try {
 const response =
 await fetch(
-"http://localhost:5080/api/auth/login",
+"https://skillhire-nodejs-1.onrender.com",
 {
 method:"POST",
 
