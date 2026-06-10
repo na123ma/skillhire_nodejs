@@ -3,7 +3,7 @@ async function initDashboard() {
   const role = localStorage.getItem("role");
 
   if (!token) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -17,7 +17,7 @@ async function initDashboard() {
   }
 
   try {
-    const response = await fetch("http://localhost:5080/api/auth/profile", {
+    const response = await fetch("https://skillhire-nodejs-1.onrender.com", {
       headers: {
         Authorization: "Bearer " + token
       }
@@ -100,5 +100,5 @@ document.addEventListener("click", (event) => {
   event.preventDefault();
   localStorage.clear();
   sessionStorage.clear();
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
