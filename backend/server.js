@@ -18,7 +18,7 @@ require("./routes/adminRoutes");
 
 const authRoutes = require("./routes/authRoutes");
 const examRoutes = require("./routes/examRoutes");
-
+app.set("trust proxy", 1);
 const app = express();
 
 connectDB().then(() => createAdmin()).catch((error) => {
@@ -41,7 +41,9 @@ app.use(compression());
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 500
+  max: 500,
+  standardHeaders: true,
+  legacyHeaders: false
 });
 
 app.use(limiter);
