@@ -26,13 +26,22 @@ connectDB().then(() => createAdmin()).catch((error) => {
 });
 
 
-app.use(cors({
-  origin: [
-    "https://ecstasyskillhire.netlify.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+// CORS
+app.use(
+  cors({
+    origin: [
+      "https://ecstasyskillhire.netlify.app",
+      "http://localhost:3000",
+      "http://127.0.0.1:5500"
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization"
+    ]
+  })
+);
 app.set("trust proxy", 1);
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
