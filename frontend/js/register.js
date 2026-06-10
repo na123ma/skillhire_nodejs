@@ -81,7 +81,7 @@ showStatus("Creating your account…", false);
 try {
   const response =
   await fetch(
-  "https://skillhire-nodejs-1.onrender.com",
+  "https://skillhire-nodejs-1.onrender.com/api/auth/register",
   {
   method:"POST",
 
