@@ -38,11 +38,22 @@ exports.getResults = async (req, res) => {
   res.json(results);
 };
 
-exports.getViolations =
-  async (req, res) => {
-    const violations =
-      await Violation.find()
-        .populate("userId");
+exports.getViolations = async (req, res) => {
+  try {
+    console.log("GET VIOLATIONS START");
 
-    res.json(violations);
-  };
+    const violations = await Violation.find()
+      .populate("userId", "username email");
+
+    console.log("Violations found:", violations.length);
+
+    res.status(200).json(violations);
+  } catch (err) {
+    console.error("VIOLATIONS ERROR:", err);
+
+    res.status(500).json({
+      message: err.message,
+      stack: err.stack
+    });
+  }
+};
