@@ -101,7 +101,7 @@ try {
   if(response.ok){
     showStatus(data.message || "Registration successful. Redirecting to login…", false);
     setTimeout(() => {
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }, 800);
   }
   else{
