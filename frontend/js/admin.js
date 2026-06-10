@@ -4,19 +4,19 @@ const resultsTableBody = document.getElementById("resultsTableBody");
 const statusText = document.getElementById("statusText");
 
 if (!token || role !== "admin") {
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 async function loadAdminData() {
   try {
     const [dashboardResponse, resultsResponse, violationsResponse] = await Promise.all([
-      fetch("https://skillhire-nodejs-1.onrender.com", {
+      fetch("https://skillhire-nodejs-1.onrender.com/api/admin/dashboard", {
         headers: { Authorization: "Bearer " + token }
       }),
-      fetch("https://skillhire-nodejs-1.onrender.com", {
+      fetch("https://skillhire-nodejs-1.onrender.com/api/admin/results", {
         headers: { Authorization: "Bearer " + token }
       }),
-      fetch("https://skillhire-nodejs-1.onrender.com", {
+      fetch("https://skillhire-nodejs-1.onrender.com/api/admin/violations", {
         headers: { Authorization: "Bearer " + token }
       })
     ]);
