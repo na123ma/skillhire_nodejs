@@ -261,7 +261,7 @@ function showExamStatus(message, isError = false) {
 
 async function fetchQuestions(){
     try {
-        const profileResponse = await fetch("https://skillhire-nodejs-1.onrender.com", {
+        const profileResponse = await fetch("https://skillhire-nodejs-1.onrender.com/api/auth/profile", {
             headers: { Authorization: "Bearer " + token }
         });
         const profile = await profileResponse.json();
@@ -287,7 +287,7 @@ async function fetchQuestions(){
         localStorage.setItem("testCompleted", String(Boolean(profile.testCompleted)));
         const response =
         await fetch(
-        "http://localhost:5080/api/exam/start",
+        "https://skillhire-nodejs-1.onrender.com/api/exam/start",
         {
             headers:{
                 Authorization:
@@ -570,7 +570,7 @@ showExamStatus("Submitting your answers…", false);
 try {
 const response =
 await fetch(
-"http://localhost:5080/api/exam/submit",
+"https://skillhire-nodejs-1.onrender.com/api/exam/submit",
 {
 method:"POST",
 
@@ -657,7 +657,7 @@ screenshot=""
 ){
 
 await fetch(
-"https://skillhire-nodejs-1.onrender.com",
+"https://skillhire-nodejs-1.onrender.com/api/violation/create",
 {
 method:"POST",
 
