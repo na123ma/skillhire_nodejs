@@ -10,13 +10,13 @@ if (!token || role !== "admin") {
 async function loadAdminData() {
   try {
     const [dashboardResponse, resultsResponse, violationsResponse] = await Promise.all([
-      fetch("http://localhost:5080/api/admin/dashboard", {
+      fetch("https://skillhire-nodejs-1.onrender.com", {
         headers: { Authorization: "Bearer " + token }
       }),
-      fetch("http://localhost:5080/api/admin/results", {
+      fetch("https://skillhire-nodejs-1.onrender.com", {
         headers: { Authorization: "Bearer " + token }
       }),
-      fetch("http://localhost:5080/api/admin/violations", {
+      fetch("https://skillhire-nodejs-1.onrender.com", {
         headers: { Authorization: "Bearer " + token }
       })
     ]);
@@ -108,7 +108,7 @@ loadAdminData();
 document.getElementById("logoutBtn").addEventListener("click", () => {
   localStorage.removeItem("token");
   localStorage.removeItem("role");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
 
 document.getElementById("exportBtn").addEventListener("click", downloadCsv);
