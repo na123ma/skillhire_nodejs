@@ -40,15 +40,16 @@ exports.getResults = async (req, res) => {
 
 exports.getViolations = async (req, res) => {
   try {
-    const violations = await Violation.find().lean();
+    const violations = await Violation.find();
 
-    console.log(JSON.stringify(violations, null, 2));
+    console.log("Violations:", violations.length);
 
-    res.json(violations);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({
-      message: err.message
+    return res.status(200).json(violations);
+  } catch (error) {
+    console.error("Violation Error:", error);
+
+    return res.status(500).json({
+      message: error.message
     });
   }
 };
